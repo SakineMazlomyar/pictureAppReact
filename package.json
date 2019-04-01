@@ -1,0 +1,33 @@
+{
+  "name": "pictureappreact",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SakineMazlomyar/pictureAppReact.git"
+  },
+  "author": "sakine",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SakineMazlomyar/pictureAppReact/issues"
+  },
+  "homepage": "https://github.com/SakineMazlomyar/pictureAppReact#readme",
+  "devDependencies": {
+    "awesome-typescript-loader": "^5.2.1",
+    "source-map-loader": "^0.2.4",
+    "typescript": "^3.4.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  },
+  "dependencies": {
+    "@types/react": "^16.8.10",
+    "@types/react-dom": "^16.8.3",
+    "live-server": "^1.2.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}
