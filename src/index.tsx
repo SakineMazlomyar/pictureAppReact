@@ -1,12 +1,9 @@
 import React from 'react';
 import * as ReactDOM from "react-dom";
 
-import { Hello } from "./components/hellow";
-import { SayGoodBy } from "./components/goodby";
+import { App } from "./components/App";
 
 ReactDOM.render(
-    <Hello compiler="TypeScript" framework="React" />
-   
-,
+    <App />,
     document.getElementById("example")
 );
