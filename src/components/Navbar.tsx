@@ -1,5 +1,5 @@
 import React, { CSSProperties } from 'react';
-
+import { Link } from 'react-router-dom';
 interface Props {
     goToMain: ()=>void
 }
@@ -11,7 +11,9 @@ export default class Navbar extends React.Component<Props>{
         return(
         
         <nav style={navbar}>
-            <h1 style={navH1} onClick={this.props.goToMain}>React Playground</h1>
+            
+            <Link to="/" style={navH1} onClick={this.props.goToMain}> React Playground </Link>
+            
         </nav>            
         )
     }
@@ -23,7 +25,7 @@ const navbar: CSSProperties = {
     color:'#E1E1E1',
     display:'flex',
     alignItems:'stretch',
-    padding: '0 1em'
+    padding: '0'
 }
 
 const navH1: CSSProperties = {

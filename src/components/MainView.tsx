@@ -1,6 +1,7 @@
 import React, { CSSProperties } from 'react';
 import { style, media} from 'typestyle'
 import  { View } from './Layout'
+import { Link } from 'react-router-dom';
 const containerStyle = style(
     media({ minWidth:300}, {     
     position:"relative",
@@ -26,6 +27,7 @@ const divItemStyle = style(
         position:"relative",
         width:"100%",
         height: "10em",
+        flexGrow:1,
         paddingTop: "0.5em",
         backgroundColor: "#202020",
         display:"flex",
@@ -34,6 +36,7 @@ const divItemStyle = style(
     media({minWidth:600}, {
         position:"relative",
         width:"100%",
+        flexGrow:1,
         height: "20em",
         paddingTop: "0.5em",
         backgroundColor: "#202020",
@@ -43,7 +46,8 @@ const divItemStyle = style(
     media({minWidth:1000}, {
         position:"relative",
         width:"100%",
-        height: "15em",
+        flexGrow:1,
+        height: "12em",
         paddingTop: "1em",
         backgroundColor: "#202020",
         display:"flex",
@@ -66,7 +70,7 @@ const pictureStyle = style(
     media({minWidth:1000}, {
         position:"absolute",
         width:"100%",
-        height: "15em",
+        height: "12em",
         flexGrow:1
     })
 )
@@ -105,19 +109,19 @@ export default class MainView extends React.Component<Props>{
     render(){
         return(
         <div className={containerStyle}>
-            <div className={divItemStyle} onClick={()=>{this.props.onClickSection('forest')}}>
+            <Link to={"/forest"} className={divItemStyle} onClick={()=>{this.props.onClickSection('forest')}}>
                     <img className={pictureStyle} src="../../assets/forest.jpg"/>
                     <span className={textStyle}>Forest</span>
-            </div>
-            <div className={divItemStyle} onClick={()=>{this.props.onClickSection('sky')}}>
+            </Link>
+            <Link to={"/sky"} className={divItemStyle} onClick={()=>{this.props.onClickSection('sky')}}>
                     <img className={pictureStyle} src="../../assets/sky.jpg"/> 
                     <span className={textStyle}>Sky</span> 
-            </div>
-            <div className={divItemStyle} onClick={()=>{this.props.onClickSection('desert')}}>
+            </Link>
+            <Link to={"/desert"} className={divItemStyle} onClick={()=>{this.props.onClickSection('desert')}}>
                 <img className={pictureStyle} src="../../assets/desert.jpg"/>
                  <span className={textStyle}>Desert</span> 
             
-            </div>
+            </Link>
         </div>
            
         )
