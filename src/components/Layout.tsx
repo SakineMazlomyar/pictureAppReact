@@ -1,17 +1,44 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import Navbar from './Navbar';
-import Content from './Content';
+import ViewContainer from './ViewContainer';
+import { centerContent} from './css';
 
-export default class Layout extends React.Component{
+
+ export type View = "main"|"forest"|"desert"|"sky"
+interface State{
+    view:View
+}
+
+export  class Layout extends React.Component<{}, State>{
+    constructor(props:{}){
+        super(props)
+        this.state = {
+            view:'sky'
+        }
+
+    }
+
+    private goToMain = () =>{
+        this.setState({
+            view:'main'
+        })
+    }
+
+    private viewOneItem = (viewName:View) =>{
+        
+        this.setState({
+            view:viewName
+        })
+    }
     render(){
         return(
-        
-        <div>
-            <Navbar />
-            <Content />
-
+        <div style={centerContent}>
+           <Navbar goToMain={this.goToMain}/>
+            <ViewContainer showTheRightView={this.state.view} onClickSection={this.viewOneItem}/>
         </div>
-            
-            )
+
+        )
     }
 }
+
+
