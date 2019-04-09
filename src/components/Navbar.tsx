@@ -1,18 +1,12 @@
 import React, { CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
-interface Props {
-    goToMain: ()=>void
-}
-export default class Navbar extends React.Component<Props>{
-    constructor(props:Props){
-        super(props)
-    }
+export default class Navbar extends React.Component{
     render(){
         return(
         
         <nav style={navbar}>
             
-            <Link to="/" style={navH1} onClick={this.props.goToMain}> React Playground </Link>
+            <Link to="/" style={navH1}> React Playground </Link>
             
         </nav>            
         )

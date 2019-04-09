@@ -1,31 +1,27 @@
-import React, { CSSProperties } from 'react';
-import { style, media} from 'typestyle'
+import React,{CSSProperties} from 'react';
 import MainView from './MainView';
 import DetailView from './DetailView';
-import  { View } from './Layout'
-interface Props {
-    showTheRightView:"main"|"forest"|"desert"|"sky",
-    onClickSection:(viewName:View)=>void
-    
-}
-export default class ViewContainer extends React.Component<Props, {}>{
-    constructor(props:Props){
-        super(props)
-        this.state ={}
-    }
-
-    
+import  { Route} from 'react-router'
+export default class ViewContainer extends React.Component{
     render(){
-      
-        if(this.props.showTheRightView === "main") {
-            return  <MainView  onClickSection={this.props.onClickSection}/>
-
-        }
-
-        return <DetailView  choosenView={this.props.showTheRightView}/>
+        return (
+        <div style={divStyle}>
+            <Route exact path="/" component={MainView}  />
+            <Route path="/forest"  render={()=> <DetailView choosenView={"forest"}/>}/>
+            <Route path="/desert" render={()=> <DetailView choosenView={"desert"}/> }/>
+            <Route path="/sky" render={()=> <DetailView choosenView={"sky"}/> }/>
+        </div>
         
-           
+        )         
     }
+}
+
+const divStyle:CSSProperties = {
+    width:"100%",
+
+    flexGrow:1,
+    display:"flex",
+    flexDirection:"column"
 }
 
 

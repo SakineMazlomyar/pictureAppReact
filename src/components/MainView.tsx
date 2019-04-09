@@ -1,22 +1,28 @@
 import React, { CSSProperties } from 'react';
 import { style, media} from 'typestyle'
-import  { View } from './Layout'
+/* import  { View } from './Layout' */
 import { Link } from 'react-router-dom';
 const containerStyle = style(
     media({ minWidth:300}, {     
     position:"relative",
     display:"flex",
-    flexDirection:"column"
+    flexDirection:"column",
+    flexGrow:1
+    
     }),
     media({ minWidth:601}, { 
     position:"relative",
     display:"flex",
-    flexDirection:"column"
+    flexDirection:"column",
+    padding:"1em 1em",
+    flexGrow:1
     }),
     media({minWidth:1000}, {
     position:"relative",
     display:"flex",
-    flexDirection:"column"})
+    flexDirection:"column",
+    padding:"1em 1em"
+})
     
 )
 
@@ -26,9 +32,9 @@ const divItemStyle = style(
     media({minWidth:300}, {
         position:"relative",
         width:"100%",
-        height: "10em",
         flexGrow:1,
-        paddingTop: "0.5em",
+        height: "13em",
+        paddingTop: "1.5em",
         backgroundColor: "#202020",
         display:"flex",
         flexDirection:"column"
@@ -37,7 +43,7 @@ const divItemStyle = style(
         position:"relative",
         width:"100%",
         flexGrow:1,
-        height: "20em",
+        height: "12em",
         paddingTop: "0.5em",
         backgroundColor: "#202020",
         display:"flex",
@@ -57,14 +63,16 @@ const divItemStyle = style(
 
 const pictureStyle = style(
     media({minWidth:300}, {
+        position:"absolute",
         width:"100%",
+        height: "13em",
         flexGrow:1
     
     }),
     media({minWidth:600}, {
         position:"absolute",
         width:"100%",
-        height: "20em",
+        height: "12em",
         flexGrow:1
     }),
     media({minWidth:1000}, {
@@ -98,26 +106,31 @@ const textStyle = style(
         fontSize:"1.5em"
     })
 )
-interface Props{
+/* interface Props{
     onClickSection:(viewName:View)=>void
-}
-export default class MainView extends React.Component<Props>{
-    constructor(props: Props){
+} */
+export default class MainView extends React.Component{
+/*     constructor(props: Props){
         super(props)
-    }
+    } */
+    /* 
+    onClick={()=>{this.props.onClickSection('forest')}}
+    onClick={()=>{this.props.onClickSection('sky')}}
+    onClick={()=>{this.props.onClickSection('desert')}}>
+    */
 
     render(){
         return(
         <div className={containerStyle}>
-            <Link to={"/forest"} className={divItemStyle} onClick={()=>{this.props.onClickSection('forest')}}>
+            <Link to={"/forest"} className={divItemStyle}>
                     <img className={pictureStyle} src="../../assets/forest.jpg"/>
                     <span className={textStyle}>Forest</span>
             </Link>
-            <Link to={"/sky"} className={divItemStyle} onClick={()=>{this.props.onClickSection('sky')}}>
+            <Link to={"/sky"} className={divItemStyle} >
                     <img className={pictureStyle} src="../../assets/sky.jpg"/> 
                     <span className={textStyle}>Sky</span> 
             </Link>
-            <Link to={"/desert"} className={divItemStyle} onClick={()=>{this.props.onClickSection('desert')}}>
+            <Link to={"/desert"} className={divItemStyle}>
                 <img className={pictureStyle} src="../../assets/desert.jpg"/>
                  <span className={textStyle}>Desert</span> 
             
@@ -127,34 +140,3 @@ export default class MainView extends React.Component<Props>{
         )
     }
 }
-
-/* const divContent:CSSProperties = {
-    position:"relative",
-    display:"flex",
-    flexDirection:"column",
-}
-
-const divItem:CSSProperties = {
-    position:"relative",
-    width:"100%",
-    height: "10em",
-    paddingTop: "2.5em",
-    backgroundColor: "#202020"
-}
-const divPicture:CSSProperties = {
-    position:"absolute",
-
-    width:"100%",
-    height: "10em"
-    
-}
-const divText:CSSProperties = {
-    
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    fontSize:"1.5em"
-      
-    
-} */
