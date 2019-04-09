@@ -13,7 +13,7 @@ export  class Layout extends React.Component<{}, State>{
     constructor(props:{}){
         super(props)
         this.state = {
-            view:'sky'
+            view:'main'
         }
 
     }

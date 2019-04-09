@@ -27,40 +27,47 @@ const divItemStyle = style(
         width:"100%",
         height: "10em",
         paddingTop: "0.5em",
-        backgroundColor: "#202020"
+        backgroundColor: "#202020",
+        display:"flex",
+        flexDirection:"column"
     }),
     media({minWidth:600}, {
         position:"relative",
         width:"100%",
-        height: "10em",
-        paddingTop: "1.5em",
-        backgroundColor: "#202020"
+        height: "20em",
+        paddingTop: "0.5em",
+        backgroundColor: "#202020",
+        display:"flex",
+        flexDirection:"column"
     }),
     media({minWidth:1000}, {
         position:"relative",
         width:"100%",
-        height: "10em",
-        paddingTop: "2.5em",
-        backgroundColor: "#202020"
+        height: "15em",
+        paddingTop: "1em",
+        backgroundColor: "#202020",
+        display:"flex",
+        flexDirection:"column"
     })
 )
 
 const pictureStyle = style(
     media({minWidth:300}, {
-        position:"absolute",
         width:"100%",
-        height: "10em",
+        flexGrow:1
     
     }),
     media({minWidth:600}, {
         position:"absolute",
         width:"100%",
-        height: "10em"
+        height: "20em",
+        flexGrow:1
     }),
     media({minWidth:1000}, {
         position:"absolute",
         width:"100%",
-        height: "10em"
+        height: "15em",
+        flexGrow:1
     })
 )
 const textStyle = style(

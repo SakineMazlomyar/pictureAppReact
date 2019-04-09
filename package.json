@@ -26,8 +26,8 @@
     "typescript": "^3.4.1",
     "typestyle": "^2.0.1",
     "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0",
-    "mode":"development"
+    "webpack-cli": "^3.3.0"
+  
   },
   "dependencies": {
     "@types/react": "^16.8.10",

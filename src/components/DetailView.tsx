@@ -24,11 +24,14 @@ export default class DetailView extends React.Component<Props>{
 }
 const divStyle:CSSProperties = {
     width:"100%",
-    flexGrow:1
+    flexGrow:1,
+    display:"flex",
+    flexDirection:"column"
 }
 const imgStyle:CSSProperties = {
-    position:"absolute",
     width:"100%",
-    height:"631px"
+    flexGrow:1
+
+
 
 }
