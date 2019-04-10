@@ -1,7 +1,9 @@
 import React,{CSSProperties} from 'react';
-import MainView from './MainView';
-import DetailView from './DetailView';
-import  { Route} from 'react-router'
+//import MainView from './MainView';
+//import DetailView from './DetailView';
+import  { Route} from 'react-router';
+const DetailView = React.lazy(()=>import(/* webpackChunkName:"DetailView" */ './DetailView'));
+const MainView = React.lazy(()=>import(/* webpackChunkName:"DetailView" */ './MainView'));
 export default class ViewContainer extends React.Component{
     render(){
         return (
