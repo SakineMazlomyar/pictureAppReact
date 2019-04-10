@@ -1,8 +1,7 @@
-import React, { CSSProperties } from 'react';
-
+import React, { CSSProperties} from 'react';
 
 interface Props{
-    choosenView:string
+    choosenView:string,
 }
 
 export default class DetailView extends React.Component<Props>{
@@ -11,7 +10,9 @@ export default class DetailView extends React.Component<Props>{
     }
     render(){
         let imgSrc = `../../assets/${this.props.choosenView}.jpg`
-        return( <img style={imgStyle} src={imgSrc}/>)
+        return( 
+                <img style={imgStyle} src={imgSrc}/>
+            )
     }
 }
 const imgStyle:CSSProperties = {
