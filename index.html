@@ -9,11 +9,19 @@
 
                 height: 100%;
                 margin: 0;
+                background-color: #202020;
+            }
+            #modalRoot{
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                z-index: 1;
             }
         </style>
     </head>
     <body>
-        <div id="example" style="background-color: #202020"></div>
+        <div id="example"></div>
+        <div id="modalRoot"></div>
 
         <!-- Dependencies -->
         <script src="./node_modules/react/umd/react.development.js"></script>

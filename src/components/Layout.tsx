@@ -6,7 +6,7 @@ export  class Layout extends React.Component{
     
     render(){
         return(
-        <div style={centerContent}>
+        <div>
            <Navbar/>
             <ViewContainer/>
         </div>

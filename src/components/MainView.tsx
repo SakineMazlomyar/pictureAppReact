@@ -31,81 +31,62 @@ const divItemStyle = style(
     //MobileStyle
     media({minWidth:300}, {
         position:"relative",
-        width:"100%",
-        flexGrow:1,
-        height: "13em",
-        paddingTop: "1.5em",
-        backgroundColor: "#202020",
-        display:"flex",
-        flexDirection:"column"
+
+
     }),
     media({minWidth:600}, {
         position:"relative",
-        width:"100%",
-        flexGrow:1,
-        height: "12em",
-        paddingTop: "0.5em",
-        backgroundColor: "#202020",
-        display:"flex",
-        flexDirection:"column"
+   
     }),
     media({minWidth:1000}, {
         position:"relative",
-        width:"100%",
-        flexGrow:1,
-        height: "12em",
-        paddingTop: "1em",
-        backgroundColor: "#202020",
-        display:"flex",
-        flexDirection:"column"
+        
     })
 )
 
 const pictureStyle = style(
     media({minWidth:300}, {
-        position:"absolute",
         width:"100%",
-        height: "13em",
-        flexGrow:1
+        height: "8em",
+        marginTop:"1em",
     
     }),
     media({minWidth:600}, {
-        position:"absolute",
         width:"100%",
-        height: "12em",
-        flexGrow:1
+        height: "8em",
+        marginTop:"2em",
     }),
     media({minWidth:1000}, {
-        position:"absolute",
+        marginTop:"1em",
         width:"100%",
-        height: "12em",
-        flexGrow:1
+        height: "8em",
+       
     })
 )
 const textStyle = style(
     media({minWidth:300}, {
         position: "absolute",
-        top: "50%",
+        top: "15%",
         left: "50%",
         transform: "translate(-50%, -50%)",
-        fontSize:"1.5em"
+        fontSize:"1.1em"
     
     }),
     media({minWidth:600}, {
         position: "absolute",
-        top: "50%",
+        top: "15%",
         left: "50%",
         transform: "translate(-50%, -50%)",
-        fontSize:"1.5em"
+        fontSize:"1.1em"
     }),
     media({minWidth:1000}, {
         position: "absolute",
-        top: "50%",
+        top: "15%",
         left: "50%",
         transform: "translate(-50%, -50%)",
-        fontSize:"1.5em"
+        fontSize:"1.1em"
     })
-)
+) 
 /* interface Props{
     onClickSection:(viewName:View)=>void
 } */
@@ -121,13 +102,13 @@ export default class MainView extends React.Component{
 
     render(){
         return(
-        <div className={containerStyle}>
+        <div>
             <Link to={"/forest"} className={divItemStyle}>
                     <img className={pictureStyle} src="../../assets/forest.jpg"/>
-                    <span className={textStyle}>Forest</span>
+                    <span className={textStyle} >Forest</span>
             </Link>
-            <Link to={"/sky"} className={divItemStyle} >
-                    <img className={pictureStyle} src="../../assets/sky.jpg"/> 
+            <Link to={"/sky"} className={divItemStyle}>
+                    <img  className={pictureStyle} src="../../assets/sky.jpg"/> 
                     <span className={textStyle}>Sky</span> 
             </Link>
             <Link to={"/desert"} className={divItemStyle}>
@@ -139,4 +120,9 @@ export default class MainView extends React.Component{
            
         )
     }
+}
+
+const imgStyle:CSSProperties={
+    width:"100%",
+
 }
