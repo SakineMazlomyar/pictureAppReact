@@ -55,6 +55,7 @@ const divStyle:CSSProperties = {
 }
 const imgStyle:CSSProperties = {
     width:"100%",
+    height:"30em",
     flexGrow:1
 
 }
