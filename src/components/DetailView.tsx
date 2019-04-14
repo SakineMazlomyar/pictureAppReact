@@ -14,35 +14,35 @@ export default class DetailView extends React.Component<Props, State>{
             openModul:false
         }
     }
-    toggleModal =()=>{
+
+    openModal = ()=>{
         this.setState({
-            openModul: !this.state.openModul
+            openModul:true
         })
-
-       
     }
-
-    private get renderModal() {
-        if(this.state.openModul) {
-            return ( 
-                <Modal>
-                    <div style={modal}>
-                        <p style={paragrafStyle}>you are looking at {this.props.choosenView}</p>
-                        <button style={modalChildStyle} onClick={this.toggleModal}>Close Modal!</button>
-                    </div>
-                </Modal>
-            )
-        }
+    closeModal = ()=>{
+        this.setState({
+            openModul:false
+        })
     }
 
     render(){
-        let imgSrc = `../../assets/${this.props.choosenView}.jpg`
-        return ( 
-            <div style={divStyle} onClick={this.toggleModal}>
-                <img style={imgStyle} src={imgSrc}/>
-                {this.renderModal}
+        console.log(this.state.openModul)
+        const modal = this.state.openModul ? (
+            <Modal>
+                <div style={modalStyle}>
+                    <p style={paragrafStyle}>you are looking at {this.props.choosenView}</p>
+                    <button style={modalChildStyle} onClick={this.closeModal}>Close Modal!</button>
+                </div>
+            </Modal>
+          ) : null;
+          let imgSrc = `../../assets/${this.props.choosenView}.jpg`
+          return (
+            <div style={divStyle}>
+                <img style={imgStyle} src={imgSrc} onClick={this.openModal}/>
+              {modal}
             </div>
-        )
+          );
     }
 }
 
@@ -60,7 +60,7 @@ const imgStyle:CSSProperties = {
 
 }
 
-const modal:CSSProperties = {
+const modalStyle:CSSProperties = {
     position:"fixed",
     top:0,
     width:"100%",
