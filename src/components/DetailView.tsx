@@ -27,7 +27,6 @@ export default class DetailView extends React.Component<Props, State>{
     }
 
     render(){
-        console.log(this.state.openModul)
         const modal = this.state.openModul ? (
             <Modal>
                 <div style={modalStyle}>

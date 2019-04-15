@@ -1,7 +1,6 @@
-import React, { CSSProperties } from 'react';
+import React from 'react';
 import Navbar from './Navbar';
 import ViewContainer from './ViewContainer';
-import { centerContent} from './css';
 export default class Layout extends React.Component{
     
     render(){
