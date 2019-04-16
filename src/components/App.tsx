@@ -12,7 +12,7 @@ export class App extends React.Component{
         return (
             <BrowserRouter>
                 <ErrorBoundary fallbackUI={<h1>Some thins went down while loading layout</h1>}>
-                    <WelcomeScreen />
+                    {/* <WelcomeScreen /> */}
                     <Suspense fallback={<Monkey />}>
                         <Layout/>
                     </Suspense>

@@ -1,11 +1,11 @@
-import React from 'react';
+import React,{CSSProperties} from 'react';
 import Navbar from './Navbar';
 import ViewContainer from './ViewContainer';
 export default class Layout extends React.Component{
     
     render(){
         return(
-        <div>
+        <div style={divStyle}>
            <Navbar/>
             <ViewContainer/>
         </div>
@@ -13,5 +13,11 @@ export default class Layout extends React.Component{
         )
     }
 }
+
+const divStyle:CSSProperties={
+    height:"100%",
+    margin:0
+}
+
 
 

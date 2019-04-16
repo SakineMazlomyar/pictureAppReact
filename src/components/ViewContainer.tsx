@@ -3,7 +3,7 @@ import { Switch } from 'react-router-dom' ;
 import Spinner from './Spinner';
 import ErrorBoundary from './ErrorBoundary';
 import  { Route} from 'react-router';
-const DetailView = React.lazy(()=>import(/* webpackChunkName:"DetailView" */ './DetailView'));
+const DetailView = React.lazy(()=>import(/* webpackChunkName:"DetailView" */ './DetailView/DetailView'));
 const MainView = React.lazy(()=>import(/* webpackChunkName:"MainView" */ './MainView'));
 
 export default class ViewContainer extends React.Component{
@@ -12,7 +12,7 @@ export default class ViewContainer extends React.Component{
         
         return (
         <ErrorBoundary fallbackUI={<h1>Something went wrong in router</h1>}>
-            <div>
+            
                 <Suspense fallback={<Spinner />}>               
                     <Switch>
                         <Route exact path="/" component={MainView}  />
@@ -21,7 +21,7 @@ export default class ViewContainer extends React.Component{
                         <Route path="/sky" render={()=> <DetailView choosenView={"sky"}/> }/>
                     </Switch>
                 </Suspense>
-            </div>
+          
         </ErrorBoundary>
         
         
@@ -29,12 +29,7 @@ export default class ViewContainer extends React.Component{
     }
 }
 
-const divStyle:CSSProperties = {
-    display:"flex",
-    flexDirection:"column",
-    flexGrow:1,
-    backgroundColor:"blue"
-}
+
 
 
 
