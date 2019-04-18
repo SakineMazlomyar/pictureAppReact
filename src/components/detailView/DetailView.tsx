@@ -1,7 +1,8 @@
 import React,{CSSProperties} from 'react';
-import HeaderSection from './HeaderSection'
-import TextSection from './TextSection'
-import ImgSection from './ImgSection'
+import HeaderSection from './HeaderSection';
+import { style, media} from 'typestyle'
+import TextSection from './TextSection';
+import ImgSection from './ImgSection';
 
 
 interface Props{
@@ -17,7 +18,8 @@ export default class DetailView extends React.Component<Props, State>{
     }
     render() {
         return (
-            <div style={divStyle}>
+            
+            <div className={divStyle} style={{ backgroundImage: `url(${"../../assets/"+this.props.choosenView +".jpg"})`}}>
                 <HeaderSection choosenView={this.props.choosenView}/>
                 <TextSection choosenView={this.props.choosenView}/>
                 <ImgSection choosenView={this.props.choosenView} />
@@ -26,8 +28,10 @@ export default class DetailView extends React.Component<Props, State>{
     
     }
 }
-const divStyle:CSSProperties={
+const divStyle = style(
+    {
     height:"100%",
     overflowY:"auto",
-    
-}
+    }
+)
+  

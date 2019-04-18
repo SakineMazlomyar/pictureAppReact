@@ -25,5 +25,6 @@ const navbar: CSSProperties = {
 const navH1: CSSProperties = {
     fontWeight:"bold",
     fontSize: "1.5em",
+    color:"white"
 
 }

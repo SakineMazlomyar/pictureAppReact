@@ -9,20 +9,26 @@ const MainView = React.lazy(()=>import(/* webpackChunkName:"MainView" */ './Main
 export default class ViewContainer extends React.Component{
    
     render(){
-        
         return (
+        <React.Fragment>
         <ErrorBoundary fallbackUI={<h1>Something went wrong in router</h1>}>
             
-                <Suspense fallback={<Spinner />}>               
-                    <Switch>
+            <Suspense fallback={<Spinner />}>               
+                <Switch>
+                    <React.Fragment>
+                    <div style={divStyle}>
+
                         <Route exact path="/" component={MainView}  />
                         <Route path="/forest"  render={()=> <DetailView choosenView={"forest"}/>}/>
                         <Route path="/desert" render={()=> <DetailView choosenView={"desert"}/> }/>
                         <Route path="/sky" render={()=> <DetailView choosenView={"sky"}/> }/>
-                    </Switch>
-                </Suspense>
+                    </div>
+                    </React.Fragment>
+                </Switch>
+            </Suspense>
           
         </ErrorBoundary>
+        </React.Fragment>
         
         
         )         
@@ -30,7 +36,9 @@ export default class ViewContainer extends React.Component{
 }
 
 
-
+const divStyle:CSSProperties={
+    height:"100%",
+}
 
 
 

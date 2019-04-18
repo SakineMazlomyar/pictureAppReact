@@ -32,7 +32,7 @@ export default class HeaderSection extends React.Component<Props, State>{
         return (
             <div style={divStyl}>
                 <span style={spanStyle}>{this.props.choosenView}</span>
-                <button onClick={this.toggleModal} style={buttonStyle}>Open Modal Here!</button>
+                <button style={buttonStyle} onClick={this.toggleModal}>Open Modal Here!</button>
                 {modal}
             </div>
         )
@@ -40,7 +40,12 @@ export default class HeaderSection extends React.Component<Props, State>{
     }
 }
 const divStyl:CSSProperties={
-    padding:"1.5em",
+    position:"relative",
+    width:"100%",
+    height:"5em",
+    display:"flex",
+    flexDirection:"row"
+
 }
 const modalStyle:CSSProperties = {
     position:"fixed",
@@ -49,7 +54,8 @@ const modalStyle:CSSProperties = {
     height:"100%",
     backgroundColor:"black",
     opacity:0.5,
-    textAlign:"center"
+    textAlign:"center",
+
 }
 
 const modalChildStyle:CSSProperties = {
@@ -68,12 +74,19 @@ const paragrafStyle:CSSProperties = {
 
 const buttonStyle:CSSProperties ={
     position:"absolute",
-    right:0
+    top:"1em",
+    right:"1em",
+    color:"white",
+    backgroundColor:"black"
 
 }
 
 const spanStyle:CSSProperties={
     position:"absolute",
-    left:0,
-    fontSize:"1.5em"
+    left:"1em",
+    top:"1em",
+    fontSize:"1.1em",
+    color:"white",
+    fontWeight:"bold"
+
 }
