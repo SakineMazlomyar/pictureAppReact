@@ -1,25 +1,27 @@
 import React, { CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
+
+import {ThemeContext} from './contexts/themeContext'
 export default class Navbar extends React.Component{
+   
+
     render(){
+
         return(
-        
-        <nav style={navbar}>
-            
-            <Link to="/" style={navH1}> React Playground </Link>
-            
-        </nav>            
+        <ThemeContext.Consumer>
+            {({theme, toggleTheme})=>(
+                 <nav style={{...navStyle, backgroundColor:theme.foreground.primary}}>
+                    <Link to="/" style={navH1}> React Playground </Link>
+                    <button onClick={toggleTheme}> Change Theme</button>
+                </nav>  
+            )
+
+            }
+
+        </ThemeContext.Consumer>
+                 
         )
     }
-}
-
-const navbar: CSSProperties = {
-    height:'4em',
-    backgroundColor:'black',
-    color:'#E1E1E1',
-    display:'flex',
-    alignItems:'stretch',
-    padding: '0'
 }
 
 const navH1: CSSProperties = {
@@ -27,4 +29,11 @@ const navH1: CSSProperties = {
     fontSize: "1.5em",
     color:"white"
 
+}
+
+const navStyle: CSSProperties = {
+    height:'4em', 
+    display:'flex', 
+    alignItems:'stretch', 
+    padding: '0'
 }

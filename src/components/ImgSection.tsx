@@ -1,5 +1,5 @@
 import React from 'react'
-import { style, media} from 'typestyle'
+import { style, media} from 'typestyle';
 interface Props{
     src:string,
     name:string
@@ -12,8 +12,9 @@ export default class ImgSection extends React.Component<Props,State>{
     constructor(props:Props){
         super(props)
     }
-    render(){
 
+    render(){
+        
         return (
             <div className={divItemStyle}>
                 <img className={pictureStyle} src={this.props.src}/>

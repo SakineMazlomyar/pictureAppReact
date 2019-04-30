@@ -36,7 +36,9 @@ export default class ImgSection extends React.Component<Props, State>{
                 params:{
                     client_id:"d3a2943e8a551d6f68564b07dc483cfef2b2387c79120eef05562f5102cbfa34",
                     query:this.props.choosenView,
-                    count:24	
+                    count:24,
+                    per_page:40		
+
 
                 }
             }).then((reponse)=>{

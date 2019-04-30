@@ -16,13 +16,10 @@ export default class ViewContainer extends React.Component{
             <Suspense fallback={<Spinner />}>               
                 <Switch>
                     <React.Fragment>
-                    <div style={divStyle}>
-
                         <Route exact path="/" component={MainView}  />
                         <Route path="/forest"  render={()=> <DetailView choosenView={"forest"}/>}/>
                         <Route path="/desert" render={()=> <DetailView choosenView={"desert"}/> }/>
                         <Route path="/sky" render={()=> <DetailView choosenView={"sky"}/> }/>
-                    </div>
                     </React.Fragment>
                 </Switch>
             </Suspense>
@@ -36,9 +33,7 @@ export default class ViewContainer extends React.Component{
 }
 
 
-const divStyle:CSSProperties={
-    height:"100%",
-}
+
 
 
 

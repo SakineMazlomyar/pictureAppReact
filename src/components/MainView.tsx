@@ -26,7 +26,8 @@ export default class MainView extends React.Component<Props, State>{
                 <Link to={"/desert"}>
                     <ImgSection name="Desert" src="../../assets/desert.jpg" />
                 </Link>
-            </div>  
+            </div>
+        
         )
     }
 }
