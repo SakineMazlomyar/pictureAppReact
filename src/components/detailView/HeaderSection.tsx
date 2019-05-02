@@ -1,5 +1,6 @@
 import React,{CSSProperties} from 'react';
 import Modal from '../Modal';
+import { ThemeContext } from '../contexts/themeContext';
 interface Props{
     choosenView:string,
 }
@@ -30,11 +31,20 @@ export default class HeaderSection extends React.Component<Props, State>{
             </Modal>
           ) : null;
         return (
-            <div style={divStyl}>
-                <span style={spanStyle}>{this.props.choosenView}</span>
-                <button style={buttonStyle} onClick={this.toggleModal}>Open Modal Here!</button>
-                {modal}
-            </div>
+            <ThemeContext.Consumer>
+                {({theme})=>(
+                <div style={{...divStyl, backgroundColor:theme.foreground.primary}}>
+                    <span style={spanStyle}>{this.props.choosenView}</span>
+                    <button style={buttonStyle} onClick={this.toggleModal}>Open Modal Here!</button>
+                    {modal}
+                </div>
+                )
+
+                }
+
+
+            </ThemeContext.Consumer>
+
         )
     
     }

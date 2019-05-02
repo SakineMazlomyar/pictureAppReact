@@ -1,5 +1,6 @@
 import React,{CSSProperties} from 'react';
 import axios from 'axios';
+import { ThemeContext } from '../contexts/themeContext'
 interface Props{
     choosenView:string,
 }
@@ -93,9 +94,14 @@ export default class ImgSection extends React.Component<Props, State>{
     render() {
         let imgSrc = `../../assets/${this.props.choosenView}.jpg`;
         return (
-            <div style={divStyle}>
-            {this.displayImg}
-              </div>
+            <ThemeContext.Consumer>
+                {({theme})=>(
+                <div style={{...divStyle, backgroundColor:theme.foreground.primary}}>
+                    {this.displayImg}
+                </div>
+                )}
+            </ThemeContext.Consumer>
+
         )
     
     }

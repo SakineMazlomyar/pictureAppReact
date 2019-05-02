@@ -1,5 +1,6 @@
 import React,{CSSProperties} from 'react';
 import Modal from '../Modal';
+import { ThemeContext } from '../contexts/themeContext'
 interface Props{
     choosenView:string,
 }
@@ -44,9 +45,14 @@ export default class TextSection extends React.Component<Props, State>{
     
     render() {
         return (
-            <div style={divStyle}>
-                {this.handleTextdisplaying}
-            </div>
+            <ThemeContext.Consumer>
+                {({theme})=>(
+                <div style={{...divStyle, backgroundColor:theme.foreground.primary}}>
+                    {this.handleTextdisplaying}
+                </div>
+                )}
+            </ThemeContext.Consumer>
+
         )
     
     }

@@ -10,7 +10,7 @@ export default class Navbar extends React.Component{
         return(
         <ThemeContext.Consumer>
             {({theme, toggleTheme})=>(
-                 <nav style={{...navStyle, backgroundColor:theme.foreground.primary}}>
+                 <nav style={{...navStyle, backgroundColor:theme.foreground.secondary}}>
                     <Link to="/" style={navH1}> React Playground </Link>
                     <button onClick={toggleTheme}> Change Theme</button>
                 </nav>  
