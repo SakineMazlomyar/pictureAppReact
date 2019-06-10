@@ -1,0 +1,42 @@
+{
+  "name": "pictureappreact",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "app": "npm-run-all --parallel build-watch live-server",
+    "build-watch": "webpack --watch --mode=production",
+    "live-server": "live-server --entry-file=index.html --no-browser"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SakineMazlomyar/pictureAppReact.git"
+  },
+  "author": "sakine",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SakineMazlomyar/pictureAppReact/issues"
+  },
+  "homepage": "https://github.com/SakineMazlomyar/pictureAppReact#readme",
+  "devDependencies": {
+    "awesome-typescript-loader": "^5.2.1",
+    "axios": "^0.18.0",
+    "live-server": "^1.2.1",
+    "npm-run-all": "^4.1.5",
+    "react-spinners": "^0.5.4",
+    "source-map-loader": "^0.2.4",
+    "typescript": "^3.4.1",
+    "typestyle": "^2.0.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  },
+  "dependencies": {
+    "@types/react": "^16.8.10",
+    "@types/react-dom": "^16.8.3",
+    "@types/react-router-dom": "^4.3.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0",
+    "react-spinners": "0.5.4"
+  }
+}
