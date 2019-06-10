@@ -8,7 +8,7 @@ export default class Layout extends React.Component{
         return(
        
             <ThemeContext.Consumer>
-                {({ theme, toggleTheme })=>(
+                {({ theme})=>(
                      <div style={{...divStyle, backgroundColor:theme.foreground.secondary}}>
                         <Navbar/>
                         <ViewContainer/>

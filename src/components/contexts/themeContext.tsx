@@ -21,7 +21,7 @@ export const themes:Themes = {
     light: {
       foreground: {
         primary: '#0A0A0A',
-        secondary: 'blue',
+        secondary: '#808080',
         darkened: '#000000'
         },
         background: {
@@ -33,7 +33,7 @@ export const themes:Themes = {
     dark: {
         foreground: {
             primary: '#EEEEEE',
-            secondary: 'red',
+            secondary: '#000000',
             darkened: '#707070'
         },
         background: {

@@ -12,7 +12,7 @@ export default class Navbar extends React.Component{
             {({theme, toggleTheme})=>(
                  <nav style={{...navStyle, backgroundColor:theme.foreground.secondary}}>
                     <Link to="/" style={navH1}> React Playground </Link>
-                    <button onClick={toggleTheme}> Change Theme</button>
+                    <button style={buttonStyle} onClick={toggleTheme}> Change Theme</button>
                 </nav>  
             )
 
@@ -22,6 +22,9 @@ export default class Navbar extends React.Component{
                  
         )
     }
+}
+const buttonStyle:CSSProperties = {
+    marginRight:"1em"
 }
 
 const navH1: CSSProperties = {

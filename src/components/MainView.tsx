@@ -16,7 +16,8 @@ export default class MainView extends React.Component<Props, State>{
     render(){
 
         return(
-            <div>
+            <div >
+                {console.log("hejjjjj")}
                 <Link to={"/forest"}>
                     <ImgSection name="Forest" src="../../assets/forest.jpg" />
                 </Link>

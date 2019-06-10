@@ -33,7 +33,7 @@ export default class HeaderSection extends React.Component<Props, State>{
         return (
             <ThemeContext.Consumer>
                 {({theme})=>(
-                <div style={{...divStyl, backgroundColor:theme.foreground.primary}}>
+                <div style={{...divStyl, backgroundColor:theme.foreground.secondary}}>
                     <span style={spanStyle}>{this.props.choosenView}</span>
                     <button style={buttonStyle} onClick={this.toggleModal}>Open Modal Here!</button>
                     {modal}

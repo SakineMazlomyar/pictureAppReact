@@ -96,7 +96,7 @@ export default class ImgSection extends React.Component<Props, State>{
         return (
             <ThemeContext.Consumer>
                 {({theme})=>(
-                <div style={{...divStyle, backgroundColor:theme.foreground.primary}}>
+                <div style={{...divStyle, backgroundColor:theme.foreground.secondary}}>
                     {this.displayImg}
                 </div>
                 )}
